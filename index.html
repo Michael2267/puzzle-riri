@@ -2,15 +2,31 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Heart Puzzle Game 💕</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Audio Background -->
-    <audio id="bgMusic" loop>
+    <audio id="bgMusic" loop autoplay>
         <source src="Sayap Pelindungmu.mp3" type="audio/mpeg">
     </audio>
+
+    <!-- Floating Hearts Background -->
+    <div class="floating-hearts">
+        <div class="heart-float">💕</div>
+        <div class="heart-float">💖</div>
+        <div class="heart-float">💗</div>
+        <div class="heart-float">💘</div>
+        <div class="heart-float">💝</div>
+        <div class="heart-float">❤️</div>
+        <div class="heart-float">💓</div>
+        <div class="heart-float">💞</div>
+        <div class="heart-float">💕</div>
+        <div class="heart-float">💖</div>
+    </div>
 
     <div class="container">
         <h1>💕 Heart Puzzle Game 💕</h1>
@@ -43,7 +59,7 @@
         </div>
 
         <div class="winner-message" id="winnerMessage">
-            <h2>🎉 SELAMAT! 🎉</h2>
+            <h2>🎉 CONGRATSSS 🎉</h2>
             <p>Kamu berhasil menyelesaikan puzzle!</p>
             <p>Langkah: <span id="finalMoves"></span></p>
             <p>Waktu: <span id="finalTime"></span></p>
@@ -74,7 +90,7 @@
                 inget kalau butuh cerita, aku selalu siap buat dengerin<br><br>
                 <strong>jangan sedih yaa 💕</strong>
             </p>
-            <button class="btn-close" onclick="location.reload()">💖 kembali 💖</button>
+            <button class="btn-close" onclick="location.reload()">💖 Mulai Lagi 💖</button>
         </div>
     </div>
 

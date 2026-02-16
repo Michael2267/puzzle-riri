@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Puzzle Game 💕</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Audio Background -->
+    <audio id="bgMusic" loop>
+        <source src="Sayap Pelindungmu.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <h1>💕 Heart Puzzle Game 💕</h1>
+        
+        <div class="instructions">
+            <h3>Cara Bermain:</h3>
+            <p>Cocokkan semua pasangan gambar untuk mengungkap kejutan!</p>
+        </div>
+
+        <div class="game-info">
+            <div class="info-item">
+                <div class="info-label">Langkah</div>
+                <div class="info-value" id="moves">0</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Waktu</div>
+                <div class="info-value" id="time">0:00</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Pasangan</div>
+                <div class="info-value" id="pairs">0/18</div>
+            </div>
+        </div>
+
+        <div class="game-board" id="gameBoard"></div>
+
+        <div class="buttons">
+            <button class="btn-restart" onclick="restartGame()">🔄 Mulai Ulang</button>
+            <button class="btn-new" onclick="newGame()">✨ Acak Baru</button>
+        </div>
+
+        <div class="winner-message" id="winnerMessage">
+            <h2>🎉 SELAMAT! 🎉</h2>
+            <p>Kamu berhasil menyelesaikan puzzle!</p>
+            <p>Langkah: <span id="finalMoves"></span></p>
+            <p>Waktu: <span id="finalTime"></span></p>
+        </div>
+
+        <div class="confession-message" id="confessionMessage">
+            <h2>💕</h2>
+            <p class="confession-text">
+                YEYYYYYY<br>
+                aloo mowningg cantikk<br><br>
+                cu amay sih baru bangun wkwk<br>
+                jangan sedih lagi yaa<br><br>
+                nanti kalau butuh cerita, cerita aja yaa<br>
+                aku bakalan dengerin bgt bgt okayy<br><br>
+                <strong>I'm here for youu❤️</strong>
+            </p>
+            <div class="confession-buttons">
+                <button class="btn-yes" onclick="handleYes()">💕 buka ini 💕</button>
+                <button class="btn-no" onclick="handleNo()">males</button>
+            </div>
+        </div>
+
+        <div class="yes-message" id="yesMessage">
+            <h2>🎉❤️🎉</h2>
+            <p class="yes-text">
+                YAAAY! ❤️❤️❤️<br><br>
+                semoga suka yaa<br>
+                inget kalau butuh cerita, aku selalu siap buat dengerin<br><br>
+                <strong>jangan sedih yaa 💕</strong>
+            </p>
+            <button class="btn-close" onclick="location.reload()">💖 kembali 💖</button>
+        </div>
+    </div>
+
+    <!-- Admin Preview Button -->
+    <button class="admin-btn" onclick="showConfessionMessage()" title="Preview Confession">
+        👁️ Preview
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

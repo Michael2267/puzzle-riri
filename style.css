@@ -6,19 +6,100 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 107, 157, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 217, 61, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(102, 126, 234, 0.3) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+/* Floating Hearts Animation */
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart-float {
+    position: absolute;
+    font-size: 20px;
+    opacity: 0;
+    animation: floatUp 10s infinite;
+}
+
+.heart-float:nth-child(1) { left: 10%; animation-delay: 0s; font-size: 25px; }
+.heart-float:nth-child(2) { left: 20%; animation-delay: 2s; font-size: 18px; }
+.heart-float:nth-child(3) { left: 30%; animation-delay: 4s; font-size: 22px; }
+.heart-float:nth-child(4) { left: 40%; animation-delay: 1s; font-size: 20px; }
+.heart-float:nth-child(5) { left: 50%; animation-delay: 3s; font-size: 28px; }
+.heart-float:nth-child(6) { left: 60%; animation-delay: 5s; font-size: 24px; }
+.heart-float:nth-child(7) { left: 70%; animation-delay: 2.5s; font-size: 19px; }
+.heart-float:nth-child(8) { left: 80%; animation-delay: 4.5s; font-size: 26px; }
+.heart-float:nth-child(9) { left: 90%; animation-delay: 1.5s; font-size: 21px; }
+.heart-float:nth-child(10) { left: 15%; animation-delay: 3.5s; font-size: 23px; }
+
+@keyframes floatUp {
+    0% {
+        bottom: -10%;
+        opacity: 0;
+        transform: translateX(0) rotate(0deg);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: translateX(100px) rotate(360deg);
+    }
 }
 
 .container {
     text-align: center;
     max-width: 1200px;
     width: 100%;
+    position: relative;
+    z-index: 10;
 }
 
 h1 {
